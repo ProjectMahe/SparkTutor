@@ -1,0 +1,30 @@
+:root{
+  --bg:#f7fbff; --card:#ffffff; --accent:#0b74ff; --muted:#666;
+  --maxw:980px;
+}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#111; display:flex; flex-direction:column; min-height:100vh; align-items:center;}
+body.dark{background:#0e1114; color:#e6eef8}
+body.dark .panel{background:#0b1220}
+.top{width:100%; padding:12px; display:flex; justify-content:space-between; align-items:center; gap:12px}
+.top-left h1{margin:0;font-size:1.4rem}
+.tag{margin:4px 0 0; color:var(--muted)}
+.top-right button{margin-left:6px}
+main{width:100%; max-width:var(--maxw); padding:18px}
+.panel{background:var(--card); padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(12,24,60,0.06); margin:16px 0; width:100%}
+.hidden{display:none}
+.primary{background:var(--accent); color:white; border:none; padding:10px 14px; border-radius:8px; cursor:pointer}
+.secondary{background:#fff; border:1px solid #ddd; padding:10px 12px; border-radius:8px}
+.small{background:transparent; border:1px solid #ddd; padding:6px 8px; border-radius:8px; cursor:pointer}
+button{font-size:0.95rem}
+.choices{margin-top:12px; display:grid; gap:8px}
+.choice{padding:12px; border-radius:8px; border:1px solid #eee; cursor:pointer}
+.choice.selected{border-color:var(--accent); background:#0b74ff11}
+.nav{display:flex; justify-content:space-between; margin-top:12px}
+.lesson-header{display:flex; justify-content:space-between; align-items:center}
+.lesson-actions{display:flex; gap:8px; margin-top:12px}
+footer{width:100%; text-align:center; padding:12px; color:var(--muted)}
+label input, label textarea{width:100%; padding:8px; margin-top:6px; border-radius:8px; border:1px solid #ddd}
+#savedList{margin-top:12px}
+.dyslexia{font-family: 'OpenDyslexic', Arial, sans-serif}
+@media(max-width:700px){.lesson-header{flex-direction:column; align-items:flex-start}}

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SparkTutor — Micro Lessons (Extended)</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-left">
+      <h1>SparkTutor</h1>
+      <p class="tag">5-minute personalised lessons & instant explainers</p>
+    </div>
+    <div class="top-right">
+      <button id="profileBtn" class="small">Profile</button>
+      <button id="settingsBtn" class="small">Settings</button>
+      <button id="teacherBtn" class="small">Teacher</button>
+      <button id="exportBtn" class="small">Export CSV</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <section id="home" class="panel">
+      <h2>Quick Diagnostic</h2>
+      <p>Answer 10 questions (mix of CS & math) to get a personalized micro-lesson.</p>
+      <div class="home-actions">
+        <button id="startBtn" class="primary">Start Diagnostic</button>
+        <button id="guestBtn" class="secondary">Continue as Guest</button>
+      </div>
+    </section>
+
+    <section id="quiz" class="panel hidden">
+      <h2>Diagnostic Quiz (<span id="qnum">1</span>/10)</h2>
+      <div id="questionBox"></div>
+      <div class="choices" id="choices"></div>
+      <div class="nav">
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn" class="primary">Next</button>
+      </div>
+    </section>
+
+    <section id="recommend" class="panel hidden">
+      <h2>Your Recommendation</h2>
+      <div id="recText"></div>
+      <div class="rec-actions">
+        <button id="openLessonBtn" class="primary">Open Lesson</button>
+        <button id="retakeBtn">Retake Diagnostic</button>
+        <button id="copyLinkBtn" class="small">Copy Share Link</button>
+      </div>
+    </section>
+
+    <section id="lesson" class="panel hidden">
+      <div class="lesson-header">
+        <h2 id="lessonTitle"></h2>
+        <div id="shareArea"></div>
+      </div>
+      <div id="lessonContent"></div>
+      <div class="lesson-actions">
+        <button id="readAloudBtn" class="small">Read Aloud</button>
+        <button id="explainBtn" class="primary">Explain Wrong Answer</button>
+        <button id="quizMeBtn">Take Mini-Quiz</button>
+      </div>
+    </section>
+
+    <section id="miniquiz" class="panel hidden">
+      <h2>Mini Quiz</h2>
+      <div id="miniQuestion"></div>
+      <div id="miniChoices" class="choices"></div>
+      <div class="nav">
+        <button id="miniNext" class="primary">Submit</button>
+      </div>
+    </section>
+
+    <section id="dashboard" class="panel hidden">
+      <h2>Progress Dashboard</h2>
+      <div id="progressArea"></div>
+      <div class="dash-actions">
+        <button id="homeBtn">Home</button>
+        <button id="clearProg" class="small">Clear Progress</button>
+      </div>
+    </section>
+
+    <section id="profile" class="panel hidden">
+      <h2>User Profile</h2>
+      <label>Name<br><input id="profileName" placeholder="Your name"></label>
+      <label>Email<br><input id="profileEmail" placeholder="you@example.com"></label>
+      <div class="nav">
+        <button id="saveProfile" class="primary">Save</button>
+        <button id="closeProfile">Close</button>
+      </div>
+    </section>
+
+    <section id="settings" class="panel hidden">
+      <h2>Settings</h2>
+      <label><input type="checkbox" id="darkToggle"> Dark mode</label><br>
+      <label><input type="checkbox" id="dyslexiaToggle"> Dyslexia-friendly font</label><br>
+      <div class="nav">
+        <button id="saveSettings" class="primary">Save</button>
+        <button id="closeSettings">Close</button>
+      </div>
+    </section>
+
+    <section id="teacher" class="panel hidden">
+      <h2>Teacher / Custom Lessons</h2>
+      <label>Lesson ID (slug)<br><input id="lessonId" placeholder="custom-1"></label>
+      <label>Title<br><input id="lessonTitleInput" placeholder="Lesson title"></label>
+      <label>Content (HTML allowed)<br><textarea id="lessonContentInput" rows="8" placeholder="&lt;h3&gt;Topic&lt;/h3&gt;&lt;p&gt;Content...&lt;/p&gt;"></textarea></label>
+      <div class="nav">
+        <button id="saveLesson" class="primary">Save Lesson</button>
+        <button id="loadLessons" class="small">Load Saved</button>
+        <button id="closeTeacher">Close</button>
+      </div>
+      <div id="savedList"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Built for DevIgnite • PWA-ready • Offline support • Extended features</small>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(()=>console.log('sw failed'));
+    }
+  </script>
+</body>
+</html>
