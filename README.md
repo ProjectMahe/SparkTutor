@@ -7,6 +7,9 @@ Teachers can create, save, and share lessons directly — no server required.
 ## Live Demo
 https://projectmahe.github.io/SparkTutor/
 
+## Watch Video
+https://youtu.be/3pWZoXH-IFc
+
 ## 🌟 Features
 - **Quick diagnostic quiz** → personalized learning path.
 - **5-minute micro-lessons** with practice questions.
