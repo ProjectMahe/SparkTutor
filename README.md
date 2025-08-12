@@ -4,6 +4,9 @@ SparkTutor is a Progressive Web App that delivers quick, personalized learning e
 Learners take a short diagnostic quiz, receive a tailored micro-lesson, and get instant explanations for mistakes.  
 Teachers can create, save, and share lessons directly — no server required.
 
+## Live Demo
+https://projectmahe.github.io/SparkTutor/
+
 ## 🌟 Features
 - **Quick diagnostic quiz** → personalized learning path.
 - **5-minute micro-lessons** with practice questions.
